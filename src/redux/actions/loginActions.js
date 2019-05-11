@@ -1,21 +1,9 @@
-import axios from "axios";
-import { LOGIN_SUCCESS, LOGIN_FAILURE, SET_CURRENT_USER } from "./actionTypes";
-
-export const setLoginSuccess = message => {
+import axios from "../../utils/axios";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, SET_INPUT } from "./actionTypes";
+// const { LOCAL_BASE_API } = process.env;
+export const setInput = payload => {
   return {
-    type: LOGIN_SUCCESS,
-    message
-  };
-};
-export const setLoginFailure = message => {
-  return {
-    type: LOGIN_FAILURE,
-    message
-  };
-};
-export const setCurrentUser = payload => {
-  return {
-    type: SET_CURRENT_USER,
+    type: SET_INPUT,
     payload
   };
 };
@@ -23,16 +11,23 @@ export const setCurrentUser = payload => {
 export const handleLogin = ({ email, password }) => async dispatch => {
   try {
     const response = await axios.post(
-      `${process.env.LOCAL_BASE_API}/auth/login`,
+      `http://localhost:5070/api/v1/auth/login`,
       {
         email,
         password
       }
     );
-    const { message } = response.data;
-    dispatch(setLoginSuccess(message));
+    const { token } = response.data;
+    console.log(token, "=====am here man");
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: token
+    });
   } catch (error) {
-    const { message, errors = {} } = error.response.data;
-    dispatch(setLoginFailure(errors || message));
+    const { message } = error.response.data;
+    dispatch({
+      type: LOGIN_FAILURE,
+      payload: message
+    });
   }
 };
