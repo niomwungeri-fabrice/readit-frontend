@@ -1,5 +1,7 @@
 export const initialState = {
   message: "",
   error: "",
-  token: {}
+  token: "",
+  email: "",
+  password: ""
 };

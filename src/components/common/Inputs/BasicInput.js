@@ -1,7 +1,7 @@
 import React from "react";
 
 const BasicInput = props => {
-  const { sign, placeholder, ariaLabel, type } = props;
+  const { sign, placeholder, ariaLabel, type, onChange, name, value } = props;
 
   return (
     <div className="input-group mb-3">
@@ -16,6 +16,9 @@ const BasicInput = props => {
         placeholder={placeholder}
         aria-label={ariaLabel}
         aria-describedby="basic-addon1"
+        onChange={onChange}
+        name={name}
+        value={value}
       />
     </div>
   );
