@@ -5,7 +5,7 @@ import { setInput } from "../../redux/actions/loginActions";
 import { handlePost } from "../../redux/actions/PostsActions";
 import BasicButton from "../common/Buttons/BasicButton";
 
-class MyEditor extends Component {
+export class MyEditor extends Component {
   handlePosts = () => {
     const { content, title, onPost } = this.props;
     onPost({ title, content });

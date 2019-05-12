@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic button should match the snapshot 1`] = `
+<button
+  className="btn btn btn-lock"
+  onClick={[MockFunction]}
+  type="button"
+>
+  Submit
+</button>
+`;
