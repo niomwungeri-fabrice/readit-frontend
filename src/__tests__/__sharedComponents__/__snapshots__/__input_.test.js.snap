@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component should match the snapshot 1`] = `
+<div
+  className="input-group mb-3"
+>
+  <div
+    className="input-group-prepend"
+  >
+    <span
+      className="input-group-text"
+      id="basic-addon1"
+    >
+      <i />
+    </span>
+  </div>
+  <input
+    aria-describedby="basic-addon1"
+    className="form-control"
+    name="email"
+    onChange={[MockFunction]}
+    placeholder="Email"
+    type="text"
+    value=""
+  />
+</div>
+`;
