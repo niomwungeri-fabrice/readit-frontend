@@ -5,7 +5,7 @@ import { setInput } from "../../redux/actions/loginActions";
 import { handleSignUp } from "../../redux/actions/signUpActions";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
-class SignUp extends Component {
+export class SignUp extends Component {
   handleSignUp = () => {
     const { onSignUP, email, firstName, lastName, password } = this.props;
     onSignUP({ email, firstName, lastName, password });
@@ -39,6 +39,7 @@ class SignUp extends Component {
               <p class="error">{error}</p>
               <form>
                 <BasicInput
+                  className="input_field"
                   sign="fa fa-user"
                   placeholder="First name"
                   type="text"
