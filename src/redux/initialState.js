@@ -2,6 +2,10 @@ export const initialState = {
   message: "",
   error: "",
   token: "",
-  email: "",
-  password: ""
+  user: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  }
 };

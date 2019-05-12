@@ -1,14 +1,15 @@
 import React from "react";
-import BasicButton from "../common/Buttons/BasicButton";
-import BasicInput from "../common/Inputs/BasicInput";
-
+import "./Home.css";
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Read It</h1>
-      <br />
-      <BasicInput sign="$" ariaLabel="Dollars" placeholder="Some dollars man" />
-      <BasicButton title="Login" className="btn-primary" />
+      <div class="row">
+        <aside class="col-sm-4" />
+        <aside class="col-sm-4">
+          <h1>Welcome to Read It</h1>
+        </aside>
+        <aside class="col-sm-4" />
+      </div>
     </div>
   );
 };
