@@ -17,7 +17,7 @@ class SignIn extends Component {
   render() {
     const { email, password, error, token, history } = this.props;
     if (token) {
-      history.push(`/`);
+      history.push(`/posts`);
     }
     return (
       <div class="row">
