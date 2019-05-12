@@ -5,7 +5,7 @@ import BasicInput from "../common/Inputs/BasicInput";
 import BasicButton from "../common/Buttons/BasicButton";
 import { setInput, handleLogin } from "../../redux/actions/loginActions";
 import "./SignIn.css";
-class SignIn extends Component {
+export class SignIn extends Component {
   signIn = () => {
     const { onLogin, password, email } = this.props;
     onLogin({ email, password });
@@ -31,6 +31,7 @@ class SignIn extends Component {
               <p class="error">{error}</p>
               <form>
                 <BasicInput
+                className="input_field"
                   sign="fa fa-user"
                   placeholder="Email"
                   ariaLabel="Email"

@@ -3,12 +3,12 @@ import "./Home.css";
 const Home = () => {
   return (
     <div>
-      <div class="row">
-        <aside class="col-sm-4" />
-        <aside class="col-sm-4">
+      <div className="row">
+        <aside className="col-sm-4" />
+        <aside className="col-sm-4">
           <h1>Welcome to Read It</h1>
         </aside>
-        <aside class="col-sm-4" />
+        <aside className="col-sm-4" />
       </div>
     </div>
   );
