@@ -1,15 +1,15 @@
 import { initialState } from "../initialState";
 import {
-  LOGIN_FAILURE,
-  LOGIN_SUCCESS,
+  SIGN_UP_FAIL,
+  SIGN_UP_SUCCESS,
   SET_INPUT
 } from "../actions/actionTypes";
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case LOGIN_SUCCESS:
-      return { ...state, token: payload };
-    case LOGIN_FAILURE:
+    case SIGN_UP_SUCCESS:
+      return { ...state, message: payload };
+    case SIGN_UP_FAIL:
       return { ...state, error: payload };
     case SET_INPUT:
       return {

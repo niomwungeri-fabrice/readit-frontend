@@ -18,7 +18,6 @@ export const handleLogin = ({ email, password }) => async dispatch => {
       }
     );
     const { token } = response.data;
-    console.log(token, "=====am here man");
     dispatch({
       type: LOGIN_SUCCESS,
       payload: token

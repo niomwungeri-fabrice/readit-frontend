@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import BasicInput from "../common/Inputs/BasicInput";
 import BasicButton from "../common/Buttons/BasicButton";
@@ -17,41 +17,51 @@ class SignIn extends Component {
   render() {
     const { email, password, error, token, history } = this.props;
     if (token) {
-      history.push(`/sign-up`);
+      history.push(`/`);
     }
     return (
-      <div>
-        <form>
-          <div className="form-row">
-            <div className="form-group col-md-6">
-              <BasicInput
-                sign="@"
-                placeholder="Email"
-                ariaLabel="Email"
-                type="email"
-                onChange={this.handleInput}
-                value={email}
-                name="email"
-              />
-              {error}
-            </div>
-            <div className="form-group col-md-6">
-              <BasicInput
-                sign="*"
-                placeholder="Password"
-                type="password"
-                onChange={this.handleInput}
-                value={password}
-                name="password"
-              />
-            </div>
+      <div class="row">
+        <aside class="col-sm-4" />
+        <aside class="col-sm-4">
+          <h1>Welcome to Read It</h1>
+          <div class="card">
+            <article class="card-body">
+              <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+              <hr />
+              <p class="error">{error}</p>
+              <form>
+                <BasicInput
+                  sign="fa fa-user"
+                  placeholder="Email"
+                  ariaLabel="Email"
+                  type="email"
+                  onChange={this.handleInput}
+                  value={email}
+                  name="email"
+                />
+                <BasicInput
+                  sign="fa fa-lock"
+                  placeholder="Password"
+                  type="password"
+                  onChange={this.handleInput}
+                  value={password}
+                  name="password"
+                />
+                <BasicButton
+                  onClick={this.signIn}
+                  title="Sign In"
+                  className="btn-primary btn-block"
+                />
+                <p class="text-center">
+                  <Link to="/sign-up" class="btn">
+                    Register here
+                  </Link>
+                </p>
+              </form>
+            </article>
           </div>
-        </form>
-        <BasicButton
-          onClick={this.signIn}
-          title="Sign In"
-          className="btn-primary"
-        />
+        </aside>
+        <aside class="col-sm-4" />
       </div>
     );
   }
@@ -59,8 +69,8 @@ class SignIn extends Component {
 export const mapStateToProps = ({ auth }) => ({
   error: auth.error,
   message: auth.message,
-  email: auth.email,
-  password: auth.password,
+  email: auth.user.email,
+  password: auth.user.password,
   token: auth.token
 });
 
