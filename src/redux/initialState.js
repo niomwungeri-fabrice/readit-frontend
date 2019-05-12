@@ -7,5 +7,9 @@ export const initialState = {
     lastName: "",
     email: "",
     password: ""
+  },
+  post: {
+    title: "",
+    content: ""
   }
 };

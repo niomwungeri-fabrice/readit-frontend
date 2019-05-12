@@ -22,6 +22,7 @@ export const handleLogin = ({ email, password }) => async dispatch => {
       type: LOGIN_SUCCESS,
       payload: token
     });
+    localStorage.setItem("token", token);
   } catch (error) {
     const { message } = error.response.data;
     dispatch({

@@ -6,10 +6,7 @@ class NavBar extends Component {
     return (
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <Link class="nav-link active" to="/sign-in">Home</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/sign-in">Profile</Link>
+          <Link class="nav-link active" to="/">Home</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/sign-in">Logout</Link>
