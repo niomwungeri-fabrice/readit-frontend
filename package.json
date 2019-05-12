@@ -22,8 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
-    "eject": "react-scripts eject",
-    "coveralls": "cat ./coverage/lcov.info"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
