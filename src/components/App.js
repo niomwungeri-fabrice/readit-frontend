@@ -8,9 +8,10 @@ import Editor from "./Editor/Editor";
 
 class App extends Component {
   render() {
+    const token = localStorage.getItem("token");
     return (
       <div className="container">
-        <NavBar />
+        {token ? <NavBar /> : ""}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/sign-in" component={SignIn} />
